@@ -1,7 +1,7 @@
 # GtkQR
 ## Create codes easily and efficiently
 
-GtkQR is a library for the gtk for generating QR codes .
+GtkQR is a gtk library for generating QR codes .
 
 ## Features
 - versions for gtk 2,3 and 4  
