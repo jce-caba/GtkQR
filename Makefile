@@ -118,7 +118,7 @@ $(TARGET): $(TARGET_NON_GUI) $(OBJECTS_GTK)/QrDrawData.o $(OBJECTS_GTK)/gtkQR.o
 	
 $(OBJECTS_GTK)/%.o:$(wildcard $(GTK)/*.c)
 	$(call create_folder,$(OUTPUT),$(OBJECTS),$(OBJECTS_GTK))
-	$(CC) $(CCFLAGS)  -I$(INCLUDE) $(PKG_CONFIG_INCLUDE) -c $(patsubst $(OBJECTS_GTK)/%.o,$(GTK)/%.c,$@) -o $@	
+	$(CC) $(CCFLAGS)  -I$(INCLUDE) $(PKG_CONFIG_INCLUDE) -fpic -c $(patsubst $(OBJECTS_GTK)/%.o,$(GTK)/%.c,$@) -o $@	
 	
 	
 $(TARGET_NON_GUI): $(OBJS) $(OBJS2) $(OBJS3)	
@@ -127,15 +127,15 @@ $(TARGET_NON_GUI): $(OBJS) $(OBJS2) $(OBJS3)
 
 $(OBJS):$(wildcard $(UTILITIES)/*.c)
 	$(call create_folder,$(OUTPUT),$(OBJECTS),$(OBJECTS_GTK))
-	$(CC) $(CCFLAGS)  -I$(INCLUDE)  -c $(patsubst $(OBJECTS)/%.o,$(UTILITIES)/%.c,$@) -o $@ 
+	$(CC) $(CCFLAGS)  -I$(INCLUDE) -fpic  -c $(patsubst $(OBJECTS)/%.o,$(UTILITIES)/%.c,$@) -o $@ 
 	
 $(OBJS2):$(wildcard $(UI)/*.c)
 	$(call create_folder,$(OUTPUT),$(OBJECTS),$(OBJECTS_GTK))
-	$(CC) $(CCFLAGS)   -I$(INCLUDE)  -c $(patsubst $(OBJECTS)/%.o,$(UI)/%.c,$@) -o $@ 
+	$(CC) $(CCFLAGS)   -I$(INCLUDE) -fpic  -c $(patsubst $(OBJECTS)/%.o,$(UI)/%.c,$@) -o $@ 
 
 $(OBJS3):$(wildcard $(ENCODINGS)/*.c)
 	$(call create_folder,$(OUTPUT),$(OBJECTS),$(OBJECTS_GTK))	
-	$(CC) $(CCFLAGS)  -I$(INCLUDE)  -c $(patsubst $(OBJECTS)/%.o,$(ENCODINGS)/%.c,$@) -o $@ 
+	$(CC) $(CCFLAGS)  -I$(INCLUDE) -fpic -c $(patsubst $(OBJECTS)/%.o,$(ENCODINGS)/%.c,$@) -o $@ 
 
 	
 doxygen:
