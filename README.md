@@ -39,7 +39,7 @@ make clean
 
 ## Use
 
-You only need compile your programs with `pkg-config gtkqr-4.0 --cflags  --libs` ,`pkg-config gtkqr-3.0 --cflags  --libs` or `pkg-config gtkqr-2.0 --cflags --libs`.Without UI use `pkg-config qrutils --cflags --libs`
+You only need build your programs with `pkg-config gtkqr-4.0 --cflags  --libs` ,`pkg-config gtkqr-3.0 --cflags  --libs` or `pkg-config gtkqr-2.0 --cflags --libs`.Without UI use `pkg-config qrutils --cflags --libs`
 
 ## Documentation 
 to generate the documentation use 
