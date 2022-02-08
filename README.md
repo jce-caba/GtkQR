@@ -21,6 +21,7 @@ for version 4 use:
 make VERSION=4
 sudo make install
 make clean
+```
 
 for version 3 use:
 
